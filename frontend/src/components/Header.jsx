@@ -1,0 +1,74 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
+  return (
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card py-4 rounded-none border-t-0 border-x-0' : 'bg-transparent py-6'}`} style={{ paddingLeft: '20px', paddingRight: '20px' }}>
+      <div className="container mx-auto flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <h1 className="text-2xl font-bold gradient-text" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Portfolio.</h1>
+        
+        {/* Desktop Nav */}
+        <nav className="desktop-nav" style={{ display: 'none' }}>
+           {/* We will handle display via standard CSS logic if needed, but for now using inline for simplicity where possible */}
+        </nav>
+
+        <style>{`
+          .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+          }
+          .nav-link:hover {
+            color: var(--text-primary);
+          }
+          @media (min-width: 768px) {
+            .desktop-nav { display: flex !important; }
+            .mobile-toggle { display: none !important; }
+          }
+        `}</style>
+
+        <div className="desktop-nav">
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href} className="nav-link">{link.name}</a>
+          ))}
+        </div>
+
+        <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ cursor: 'pointer' }}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </div>
+      </div>
+      
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu glass-card" style={{ position: 'absolute', top: '100%', left: 0, width: '100%', padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} style={{ color: 'var(--text-primary)', textDecoration: 'none', fontSize: '1.1rem' }}>{link.name}</a>
+          ))}
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
