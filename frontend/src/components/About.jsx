@@ -22,6 +22,12 @@ const About = () => {
             My goal is to build high-performance applications that provide value to users and help businesses grow. When I'm not coding, you'll find me exploring new technologies or contributing to open-source projects.
           </p>
           
+          <div style={{ display: 'flex', gap: '20px', marginBottom: '40px' }}>
+            <a href="/resume.pdf" target="_blank" download className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold' }}>
+              Download Resume
+            </a>
+          </div>
+          
           <div className="glass-card" style={{ padding: '30px' }}>
             <h4 style={{ marginBottom: '15px' }}>Education</h4>
             <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>Bachelor of Science in Computer Science</p>

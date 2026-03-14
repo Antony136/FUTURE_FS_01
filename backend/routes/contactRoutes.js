@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Message = require('../models/Message');
+const nodemailer = require('nodemailer');
 
-// @desc    Submit contact form
+// @desc    Submit contact form and send email notification
 // @route   POST /api/contact
 // @access  Public
 router.post('/', async (req, res) => {
@@ -22,12 +23,39 @@ router.post('/', async (req, res) => {
 
         await newMessage.save();
 
+        // Optional: Send email notification via Nodemailer
+        // To use this, configure EMAIL_USER and EMAIL_PASS in your .env file
+        try {
+            if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail', // or another service
+                    auth: {
+                        user: process.env.EMAIL_USER,
+                        pass: process.env.EMAIL_PASS
+                    }
+                });
+
+                const mailOptions = {
+                    from: process.env.EMAIL_USER,
+                    to: process.env.EMAIL_USER, // Send notification to yourself
+                    subject: `New Portfolio Message: ${subject}`,
+                    text: `You have a new message from ${name} (${email}):\n\n${message}`
+                };
+
+                await transporter.sendMail(mailOptions);
+                console.log('Email notification sent directly');
+            }
+        } catch (emailError) {
+            console.error('Email notification failed to send (but message was saved to DB):', emailError.message);
+            // We deliberately don't return an error response here so the user on the frontend still sees a success message
+        }
+
         res.status(201).json({
             success: true,
             message: 'Message sent successfully!'
         });
     } catch (error) {
-        console.error(error);
+        console.error('Error handling contact message:', error);
         res.status(500).json({
             success: false,
             message: 'Server Error. Please try again later.'

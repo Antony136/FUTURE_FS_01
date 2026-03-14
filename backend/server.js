@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const contactRoutes = require('./routes/contactRoutes');
+const blogRoutes = require('./routes/blogRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/api/contact', contactRoutes);
+app.use('/api/blogs', blogRoutes);
 
 // Basic Route for testing
 app.get('/', (req, res) => {

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +15,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -43,7 +54,7 @@ const Header = () => {
             color: var(--text-primary);
           }
           @media (min-width: 768px) {
-            .desktop-nav { display: flex !important; }
+            .desktop-nav { display: flex !important; align-items: center; }
             .mobile-toggle { display: none !important; }
           }
         `}</style>
@@ -52,10 +63,18 @@ const Header = () => {
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="nav-link">{link.name}</a>
           ))}
+          <button onClick={toggleTheme} style={{ background: 'none', border: 'none', color: 'var(--text-primary)', marginLeft: '30px', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
 
-        <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ cursor: 'pointer' }}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }} className="mobile-toggle">
+          <button onClick={toggleTheme} style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <div onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ cursor: 'pointer', color: 'var(--text-primary)' }}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </div>
         </div>
       </div>
       
