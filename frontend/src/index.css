@@ -82,6 +82,46 @@ section {
   background: #333;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-primary);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
+/* Custom Cursor */
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-primary);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  box-sizing: border-box;
+}
+
+/* Hide default cursor only when our custom cursor component is active */
+body[style*="cursor: none"] * {
+  cursor: none !important;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }

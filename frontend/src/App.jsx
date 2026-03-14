@@ -7,11 +7,15 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import ScrollProgress from './components/ScrollProgress';
 
 const App = () => {
   return (
     <Router>
       <div className="app-container">
+        <CustomCursor />
+        <ScrollProgress />
         <Header />
         <main>
           <Routes>

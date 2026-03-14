@@ -1,15 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import ThreeBackground from './ThreeBackground';
 
 const Hero = () => {
   return (
-    <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+    <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', position: 'relative' }}>
+      
+      {/* 3D Particle Background */}
+      <ThreeBackground />
+
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="hero-content"
+        style={{ zIndex: 10 }}
       >
         <span className="gradient-text" style={{ fontWeight: '600', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.9rem', marginBottom: '20px', display: 'block' }}>
           Hi, I am Antony Abishek A
