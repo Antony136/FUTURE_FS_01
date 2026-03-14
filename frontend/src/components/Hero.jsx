@@ -32,9 +32,9 @@ const Hero = () => {
             View My Work <ArrowRight size={20} />
           </a>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-            <a href="https://github.com/Antony136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
-            <a href="https://www.linkedin.com/in/antonyabishek136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Linkedin size={20} /></a>
-            <a href="mailto:antonyabishek014@gmail.com" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Mail size={20} /></a>
+            <a href="https://github.com/Antony136" aria-label="GitHub Profile" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
+            <a href="https://www.linkedin.com/in/antonyabishek136" aria-label="LinkedIn Profile" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Linkedin size={20} /></a>
+            <a href="mailto:antonyabishek014@gmail.com" aria-label="Email Me" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Mail size={20} /></a>
           </div>
         </div>
       </motion.div>

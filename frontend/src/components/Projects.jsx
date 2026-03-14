@@ -156,10 +156,10 @@ const Projects = () => {
               
               <div style={{ display: 'flex', gap: '15px' }}>
                 {project.github && project.github !== '#' && (
-                  <a href={project.github} target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)' }}><Github size={20} /></a>
+                  <a href={project.github} aria-label={`GitHub repo for ${project.title}`} target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)' }}><Github size={20} /></a>
                 )}
                 {project.live && project.live !== '#' && (
-                  <a href={project.live} target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)' }}><ExternalLink size={20} /></a>
+                  <a href={project.live} aria-label={`Live demo for ${project.title}`} target="_blank" rel="noreferrer" style={{ color: 'var(--text-primary)' }}><ExternalLink size={20} /></a>
                 )}
               </div>
             </div>

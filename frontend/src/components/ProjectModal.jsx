@@ -41,6 +41,7 @@ const ProjectModal = ({ project, onClose }) => {
           {/* Close Button */}
           <button 
             onClick={onClose}
+            aria-label="Close Modal"
             style={{ 
               position: 'absolute', top: '20px', right: '20px', background: 'var(--glass-bg)', 
               border: '1px solid var(--glass-border)', color: 'var(--text-primary)', 

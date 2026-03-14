@@ -63,13 +63,13 @@ const Header = () => {
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="nav-link">{link.name}</a>
           ))}
-          <button onClick={toggleTheme} style={{ background: 'none', border: 'none', color: 'var(--text-primary)', marginLeft: '30px', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+          <button onClick={toggleTheme} aria-label="Toggle Theme" style={{ background: 'none', border: 'none', color: 'var(--text-primary)', marginLeft: '30px', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }} className="mobile-toggle">
-          <button onClick={toggleTheme} style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+          <button onClick={toggleTheme} aria-label="Toggle Theme" style={{ background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           <div onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ cursor: 'pointer', color: 'var(--text-primary)' }}>

@@ -21,7 +21,7 @@ const Contact = () => {
     setStatus({ loading: true, success: false, error: null });
 
     try {
-      await axios.post('/api/contact', formData);
+      await axios.post('https://portfolio-o6p3.onrender.com/api/contact', formData);
       setStatus({ loading: false, success: true, error: null });
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000);

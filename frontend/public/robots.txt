@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://antonyabishek.vercel.app/sitemap.xml
