@@ -29,30 +29,31 @@ router.post('/', async (req, res) => {
             if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
                 const transporter = nodemailer.createTransport({
                     host: 'smtp.gmail.com',
-                    port: 587,
-                    secure: false, // Use STARTTLS
+                    port: 465,
+                    secure: true, // Use SSL/TLS
                     auth: {
                         user: process.env.EMAIL_USER,
                         pass: process.env.EMAIL_PASS
                     },
                     tls: {
-                        // Do not fail on invalid certs
                         rejectUnauthorized: false
                     },
-                    connectionTimeout: 15000, // Increase timeout to 15s
-                    greetingTimeout: 15000,
-                    socketTimeout: 15000
+                    family: 4, // FORCE IPv4 to avoid ENETUNREACH/Timeout bugs on Render/Vercel
+                    connectionTimeout: 20000,
+                    greetingTimeout: 20000,
+                    socketTimeout: 20000
                 });
 
                 const mailOptions = {
-                    from: process.env.EMAIL_USER,
-                    to: process.env.EMAIL_USER, // Send notification to yourself
+                    from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
+                    to: process.env.EMAIL_USER,
                     subject: `New Portfolio Message: ${subject}`,
-                    text: `You have a new message from ${name} (${email}):\n\n${message}`
+                    text: `You have a new message from ${name} (${email}):\n\n${message}`,
+                    replyTo: email
                 };
 
-                await transporter.sendMail(mailOptions);
-                console.log('Email notification sent directly');
+                const info = await transporter.sendMail(mailOptions);
+                console.log('Email notification sent successfully:', info.messageId);
             }
         } catch (emailError) {
             console.error('Email notification failed to send (but message was saved to DB):', emailError.message);
