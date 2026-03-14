@@ -4,25 +4,25 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured MERN stack shop with Redux, Cloudinary integration, and PayPal payment processing.",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
-    github: "https://github.com",
-    live: "https://example.com"
+    title: "Campus Event Tracking System",
+    description: "Developed a campus event portal enabling students to discover, register & track events with secure authentication and real-time updates.",
+    tech: ["React.js", "Node.js", "Express", "MongoDB", "TypeScript"],
+    github: "https://github.com/Antony136",
+    live: "#"
   },
   {
-    title: "AI Chat Application",
-    description: "Real-time communication app utilizing OpenAI API and Socket.io for seamless interactions.",
-    tech: ["React", "Socket.io", "OpenAI", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com"
+    title: "IoT-Blockchain Supply Chain",
+    description: "Built real-time perishable goods tracking, enhancing transparency and reducing spoilage.",
+    tech: ["IoT", "Blockchain", "Node.js"],
+    github: "https://github.com/Antony136",
+    live: "#"
   },
   {
-    title: "Project Management Tool",
-    description: "Collaborative workspace for teams to manage tasks, track progress, and share resources.",
-    tech: ["React", "GraphQL", "Apollo", "Express"],
-    github: "https://github.com",
-    live: "https://example.com"
+    title: "AI-Driven Traffic Management System",
+    description: "Smart traffic management platform analyzing real-time traffic data to optimize signals and detect congestion with a live dashboard.",
+    tech: ["React.js", "Node.js", "PostgreSQL", "Computer Vision", "IoT Sensors"],
+    github: "https://github.com/Antony136",
+    live: "#"
   }
 ];
 

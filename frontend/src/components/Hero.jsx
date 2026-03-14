@@ -12,7 +12,7 @@ const Hero = () => {
         className="hero-content"
       >
         <span className="gradient-text" style={{ fontWeight: '600', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.9rem', marginBottom: '20px', display: 'block' }}>
-          Available for freelance work
+          Hi, I am Antony Abishek A
         </span>
         <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', lineHeight: '1.1', marginBottom: '30px' }}>
           Crafting Digital <br /> <span className="gradient-text">Experiences</span>
@@ -26,9 +26,9 @@ const Hero = () => {
             View My Work <ArrowRight size={20} />
           </a>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Github size={20} /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Linkedin size={20} /></a>
-            <a href="mailto:contact@example.com" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Mail size={20} /></a>
+            <a href="https://github.com/Antony136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Github size={20} /></a>
+            <a href="https://www.linkedin.com/in/antonyabishek136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Linkedin size={20} /></a>
+            <a href="mailto:antonyabishek014@gmail.com" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Mail size={20} /></a>
           </div>
         </div>
       </motion.div>

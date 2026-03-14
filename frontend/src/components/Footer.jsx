@@ -9,7 +9,7 @@ const Footer = () => {
           Built with MERN Stack • Designed with Passion
         </p>
         <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-          &copy; {new Date().getFullYear()} Antony. All rights reserved.
+          &copy; {new Date().getFullYear()} Antony Abishek A. All rights reserved.
         </div>
       </div>
     </footer>

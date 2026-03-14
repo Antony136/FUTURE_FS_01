@@ -4,10 +4,10 @@ import { Code2, Database, Layout, Smartphone } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { title: "Frontend", icon: <Layout size={24} />, items: ["React", "Next.js", "Redux", "Tailwind CSS"] },
-    { title: "Backend", icon: <Database size={24} />, items: ["Node.js", "Express", "MongoDB", "PostgreSQL"] },
-    { title: "Languages", icon: <Code2 size={24} />, items: ["JavaScript", "TypeScript", "Python", "Go"] },
-    { title: "Mobile", icon: <Smartphone size={24} />, items: ["React Native", "Flutter"] }
+    { title: "Web Development", icon: <Layout size={24} />, items: ["HTML/CSS", "React.js", "Node.js", "Express.js", "MongoDB"] },
+    { title: "Languages", icon: <Code2 size={24} />, items: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript"] },
+    { title: "Databases", icon: <Database size={24} />, items: ["MySQL", "MongoDB", "PostgreSQL"] },
+    { title: "Tools & Skills", icon: <Smartphone size={24} />, items: ["Git/GitHub", "Postman", "Problem Solving", "Teamwork"] }
   ];
 
   return (
@@ -16,10 +16,10 @@ const About = () => {
         <div>
           <h2 style={{ fontSize: '3rem', marginBottom: '30px' }}>About <span className="gradient-text">Me</span></h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '20px', fontSize: '1.1rem' }}>
-            I am a passionate Full Stack Developer with a strong foundation in modern web technologies. I love turning complex problems into simple, beautiful, and intuitive designs.
+            I am a 3rd-year Computer Science Engineering student with hands-on experience in full-stack web development using MERN and TypeScript.
           </p>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '30px', fontSize: '1.1rem' }}>
-            My goal is to build high-performance applications that provide value to users and help businesses grow. When I'm not coding, you'll find me exploring new technologies or contributing to open-source projects.
+            I am passionate about building scalable applications, solving real-world problems through technology, and continuously learning modern tools in AIML and Web Development. I'm a strong team collaborator with a drive to deliver efficient, user-focused solutions.
           </p>
           
           <div style={{ display: 'flex', gap: '20px', marginBottom: '40px', flexWrap: 'wrap' }}>
@@ -33,8 +33,16 @@ const About = () => {
           
           <div className="glass-card" style={{ padding: '30px' }}>
             <h4 style={{ marginBottom: '15px' }}>Education</h4>
-            <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>Bachelor of Science in Computer Science</p>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>University of Technology • 2018 - 2022</p>
+            <div style={{ marginBottom: '15px' }}>
+              <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>B.E. Computer Science Engineering</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Sri Venkateswara College of Engineering • 2023 - Present</p>
+              <p style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '500', marginTop: '4px' }}>CGPA: 8.67 / 10</p>
+            </div>
+            <div>
+              <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>Higher Secondary (Computer Science & Maths)</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Holy Family Convent School • 2011 - 2023</p>
+              <p style={{ color: 'var(--accent-primary)', fontSize: '0.9rem', fontWeight: '500', marginTop: '4px' }}>Score: 96.01%</p>
+            </div>
           </div>
         </div>
 
