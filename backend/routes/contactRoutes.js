@@ -29,15 +29,19 @@ router.post('/', async (req, res) => {
             if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
                 const transporter = nodemailer.createTransport({
                     host: 'smtp.gmail.com',
-                    port: 465,
-                    secure: true,
+                    port: 587,
+                    secure: false, // Use STARTTLS
                     auth: {
                         user: process.env.EMAIL_USER,
                         pass: process.env.EMAIL_PASS
                     },
                     tls: {
+                        // Do not fail on invalid certs
                         rejectUnauthorized: false
-                    }
+                    },
+                    connectionTimeout: 15000, // Increase timeout to 15s
+                    greetingTimeout: 15000,
+                    socketTimeout: 15000
                 });
 
                 const mailOptions = {
