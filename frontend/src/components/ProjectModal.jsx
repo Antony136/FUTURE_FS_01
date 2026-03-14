@@ -107,6 +107,32 @@ const ProjectModal = ({ project, onClose }) => {
                   </div>
                 )}
 
+                {project.details.challenges && (
+                  <div>
+                    <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Challenges Faced</h3>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
+                      {project.details.challenges.map((challenge, i) => (
+                        <div key={i} style={{ padding: '15px', borderLeft: '2px solid var(--accent-secondary)', background: 'var(--glass-bg)', borderRadius: '0 10px 10px 0' }}>
+                          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0 }}>{challenge}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.details.futureImprovements && (
+                  <div>
+                    <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Future Improvements</h3>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      {project.details.futureImprovements.map((item, i) => (
+                        <span key={i} style={{ padding: '8px 15px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.2)', color: '#10b981', borderRadius: '8px', fontSize: '0.9rem' }}>
+                          • {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {project.details.feasibility && (
                   <div className="grid grid-2" style={{ gap: '30px', marginTop: '10px' }}>
                     <div>
@@ -127,7 +153,7 @@ const ProjectModal = ({ project, onClose }) => {
                 )}
 
                 {project.details.business && (
-                  <div className="glass-card" style={{ padding: '30px', borderLeft: '4px solid var(--accent-secondary)' }}>
+                  <div className="glass-card" style={{ padding: '30px', borderLeft: '4px solid var(--accent-secondary)', marginBottom: '20px' }}>
                     <h3 style={{ fontSize: '1.5rem', marginBottom: '15px' }}>Business & Value Proposition</h3>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '15px' }}><strong>Target Audience:</strong> {project.details.business.model}</p>
                     {project.details.business.valueProps && (

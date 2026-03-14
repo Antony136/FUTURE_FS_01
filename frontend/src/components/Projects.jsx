@@ -21,6 +21,18 @@ const projects = [
         { title: "Accident & Pedestrian Safety", desc: "AI anticipates accidents and pedestrians to improve road safety and prevent traffic disruptions." },
         { title: "Smart Dashboard & Routing", desc: "Live admin dashboard displays traffic status, congestion, and optimized travel routes." }
       ],
+      challenges: [
+        "Handling low-light CCTV footage with high accuracy using YOLOv8 optimized for night conditions.",
+        "Reducing YOLO detection latency to achieve sub-100ms processing for real-time responsiveness.",
+        "Synchronizing signal timing across multiple complex junctions to prevent systemic gridlock.",
+        "Ensuring reliable communication between edge sensors and central server over intermittent networks."
+      ],
+      futureImprovements: [
+        "Integration with public transport GPS for systemic priority.",
+        "Predictive AI for holiday and event-based traffic surges.",
+        "Implementation of V2I (Vehicle-to-Infrastructure) communication.",
+        "Advanced air quality sensor integration to reroute traffic based on pollution levels."
+      ],
       feasibility: [
         "Low-Cost & Accessible Hardware: Uses affordable components (ESP32, standard IP cameras, LED signals).",
         "Minimal Infrastructure: Does not require tearing up roads; can be retrofitted onto existing Cisco CCTV infrastructure.",
@@ -58,6 +70,18 @@ const projects = [
         { title: "Student Profiles", desc: "Provides a single place to view past events, attendance records, and generated certificates." },
         { title: "Organizer & Admin Tools", desc: "Faculty can manage event CRUD operations, verify attendance via scanning, approve ODs, and view analytics." },
         { title: "Role-Based Access Control", desc: "Secure JWT-based authentication separating student, organizer, and administrator privileges to ensure data integrity." }
+      ],
+      challenges: [
+        "Synchronizing large datasets of student records in real-time without database contention.",
+        "Securing QR code generation with ephemeral tokens to prevent unauthorized attendance copying.",
+        "Designing a responsive UI that works across various mobile devices for field use.",
+        "Handling high traffic loads during major campus festival registrations."
+      ],
+      futureImprovements: [
+        "Mobile app for easier QR scanning and notifications.",
+        "Integration with university ERP systems for automatic credential verification.",
+        "AI-based event recommendations for students.",
+        "Digital badge and reward system for active participants."
       ],
       feasibility: [
         "Technical: Built using established web tech (Next.js, PostgreSQL, Firebase) with integrated QR and PDF generation.",
@@ -97,6 +121,18 @@ const projects = [
         { title: "Real-Time Dashboard", desc: "A React.js based dashboard that visualizes real-time sensor metrics and compliance status, giving full transparency to both buyers and sellers." },
         { title: "Historical Data Analytics", desc: "Analyzes past shipment data stored in MongoDB to identify transit bottlenecks and optimize future delivery routes." }
       ],
+      challenges: [
+        "Optimizing data transmission frequency to conserve IoT battery life during long-haul transit.",
+        "Efficiently managing blockchain-style hashing on limited edge hardware resource constraints.",
+        "Ensuring data integrity in areas with poor GPS/Network connectivity using local buffering.",
+        "Balancing blockchain security with the performance needs of high-velocity real-time monitoring."
+      ],
+      futureImprovements: [
+        "Full Ethereum smart contract integration for automated payments.",
+        "Scaling IoT network with LoRaWAN for longer-range communication.",
+        "Advanced predictive analytics for shelf-life estimation based on sensor history.",
+        "Multi-signature approvals for handoffs between different logistics partners."
+      ],
       feasibility: [
         "Data Storage: Uses a primary backend database (MongoDB) interfaced alongside basic Blockchain-hashing concepts for data integrity.",
         "Custom Scalable API: Node.js and Express handle the high-frequency MQTT/HTTP requests coming from the active IoT microcontrollers.",
@@ -133,6 +169,10 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div 
             key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
             whileHover={{ y: -10 }}
             className="glass-card"
             style={{ padding: '30px', display: 'flex', flexDirection: 'column', gap: '20px', height: '100%' }}

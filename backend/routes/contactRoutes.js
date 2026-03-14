@@ -26,22 +26,17 @@ router.post('/', async (req, res) => {
         // Optional: Send email notification via Nodemailer
         // To use this, configure EMAIL_USER and EMAIL_PASS in your .env file
         try {
+            console.log('Attempting to send email notification...');
+            console.log('EMAIL_USER exists:', !!process.env.EMAIL_USER);
+            console.log('EMAIL_PASS exists:', !!process.env.EMAIL_PASS);
+
             if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
                 const transporter = nodemailer.createTransport({
-                    host: 'smtp.gmail.com',
-                    port: 465,
-                    secure: true, // Use SSL/TLS
+                    service: 'gmail',
                     auth: {
                         user: process.env.EMAIL_USER,
                         pass: process.env.EMAIL_PASS
-                    },
-                    tls: {
-                        rejectUnauthorized: false
-                    },
-                    family: 4, // FORCE IPv4 to avoid ENETUNREACH/Timeout bugs on Render/Vercel
-                    connectionTimeout: 20000,
-                    greetingTimeout: 20000,
-                    socketTimeout: 20000
+                    }
                 });
 
                 const mailOptions = {

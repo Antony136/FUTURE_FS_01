@@ -67,6 +67,49 @@ const About = () => {
           ))}
         </div>
       </div>
+      <div className="grid grid-2" style={{ alignItems: 'start', gap: '80px', marginTop: '40px' }}>
+        <div>
+          <div className="glass-card" style={{ padding: '30px', borderLeft: '4px solid var(--accent-primary)' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ position: 'relative', display: 'flex', height: '12px', width: '12px' }}>
+                <span style={{ animation: 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite', position: 'absolute', display: 'inline-flex', height: '100%', width: '100%', borderRadius: '9999px', backgroundColor: 'var(--accent-primary)', opacity: 0.75 }}></span>
+                <span style={{ position: 'relative', display: 'inline-flex', borderRadius: '9999px', height: '12px', width: '12px', backgroundColor: 'var(--accent-primary)' }}></span>
+              </span>
+              Currently Building
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
+                Emotion-aware AI chatbot with NLP
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
+                Advanced portfolio analytics dashboard
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
+                Computer vision based traffic anomaly detection
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>GitHub Stats</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <img 
+              src="https://github-readme-stats.vercel.app/api?username=Antony136&show_icons=true&theme=transparent&hide_border=true&title_color=6366f1&icon_color=6366f1&text_color=ffffff&bg_color=00000000" 
+              alt="Antony's GitHub stats" 
+              style={{ width: '100%', maxWidth: '450px', borderRadius: '10px' }}
+            />
+            <img 
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=Antony136&layout=compact&theme=transparent&hide_border=true&title_color=6366f1&text_color=ffffff&bg_color=00000000" 
+              alt="Top Languages" 
+              style={{ width: '100%', maxWidth: '400px', borderRadius: '10px' }}
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

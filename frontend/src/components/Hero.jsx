@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Code2 } from 'lucide-react';
 import ThreeBackground from './ThreeBackground';
 
 const Hero = () => {
@@ -20,11 +20,14 @@ const Hero = () => {
         <span className="gradient-text" style={{ fontWeight: '600', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.9rem', marginBottom: '20px', display: 'block' }}>
           Hi, I am Antony Abishek A
         </span>
-        <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', lineHeight: '1.1', marginBottom: '30px' }}>
-          Crafting Digital <br /> <span className="gradient-text">Experiences</span>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)', lineHeight: '1.1', marginBottom: '15px' }}>
+          Building Scalable Web <br /> & <span className="gradient-text">AI Solutions</span>
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 40px' }}>
-          Full-stack developer specializing in building modern, scalable, and user-centric web applications using the MERN stack.
+        <p style={{ color: 'var(--text-primary)', fontSize: '1.4rem', fontWeight: '500', marginBottom: '10px' }}>
+          Full Stack & AI Developer | Computer Vision Enthusiast
+        </p>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 40px' }}>
+          Crafting intelligent web systems and scalable applications that solve real-world problems.
         </p>
         
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -32,9 +35,10 @@ const Hero = () => {
             View My Work <ArrowRight size={20} />
           </a>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-            <a href="https://github.com/Antony136" aria-label="GitHub Profile" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
-            <a href="https://www.linkedin.com/in/antonyabishek136" aria-label="LinkedIn Profile" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Linkedin size={20} /></a>
-            <a href="mailto:antonyabishek014@gmail.com" aria-label="Email Me" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Mail size={20} /></a>
+            <a href="https://github.com/Antony136" aria-label="GitHub Profile" target="_blank" rel="noreferrer" className="glass-card circular-icon-link" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
+            <a href="https://www.linkedin.com/in/antonyabishek136" aria-label="LinkedIn Profile" target="_blank" rel="noreferrer" className="glass-card circular-icon-link" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Linkedin size={20} /></a>
+            <a href="https://leetcode.com/u/Antony_136/" aria-label="LeetCode Profile" target="_blank" rel="noreferrer" className="glass-card circular-icon-link" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Code2 size={20} /></a>
+            <a href="mailto:antonyabishek014@gmail.com" aria-label="Email Me" className="glass-card circular-icon-link" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Mail size={20} /></a>
           </div>
         </div>
       </motion.div>
