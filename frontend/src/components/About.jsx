@@ -23,10 +23,10 @@ const About = () => {
           </p>
           
           <div style={{ display: 'flex', gap: '20px', marginBottom: '40px', flexWrap: 'wrap' }}>
-            <a href="https://drive.google.com/file/d/1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0/view?usp=sharing" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}>
+            <a href="https://drive.google.com/file/d/1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0/view?usp=sharing" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--bg-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}>
               View Resume
             </a>
-            <a href="https://drive.google.com/uc?export=download&id=1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', fontWeight: 'bold', borderRadius: '10px', transition: 'var(--transition)' }}>
+            <a href="https://drive.google.com/uc?export=download&id=1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', fontWeight: 'bold', borderRadius: '10px', transition: 'var(--transition)' }}>
               Download Resume
             </a>
           </div>

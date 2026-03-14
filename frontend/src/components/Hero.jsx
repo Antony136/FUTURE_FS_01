@@ -28,13 +28,13 @@ const Hero = () => {
         </p>
         
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="#projects" className="glass-card" style={{ padding: '15px 30px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', transition: 'var(--transition)' }}>
+          <a href="#projects" className="glass-card" style={{ padding: '15px 30px', textDecoration: 'none', color: 'var(--bg-primary)', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', display: 'flex', alignItems: 'center', gap: '10px', transition: 'var(--transition)', fontWeight: 'bold' }}>
             View My Work <ArrowRight size={20} />
           </a>
           <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-            <a href="https://github.com/Antony136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Github size={20} /></a>
-            <a href="https://www.linkedin.com/in/antonyabishek136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Linkedin size={20} /></a>
-            <a href="mailto:antonyabishek014@gmail.com" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)' }}><Mail size={20} /></a>
+            <a href="https://github.com/Antony136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Github size={20} /></a>
+            <a href="https://www.linkedin.com/in/antonyabishek136" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Linkedin size={20} /></a>
+            <a href="mailto:antonyabishek014@gmail.com" className="glass-card" style={{ padding: '12px', color: 'var(--text-primary)', border: '1px solid var(--glass-border)' }}><Mail size={20} /></a>
           </div>
         </div>
       </motion.div>

@@ -52,7 +52,7 @@ const Contact = () => {
                 value={formData.name} 
                 onChange={handleChange} 
                 required 
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'white' }} 
+                style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'var(--text-primary)', outline: 'none' }} 
               />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -63,7 +63,7 @@ const Contact = () => {
                 value={formData.email} 
                 onChange={handleChange} 
                 required 
-                style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'white' }} 
+                style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'var(--text-primary)', outline: 'none' }} 
               />
             </div>
           </div>
@@ -75,7 +75,7 @@ const Contact = () => {
               value={formData.subject} 
               onChange={handleChange} 
               required 
-              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'white' }} 
+              style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'var(--text-primary)', outline: 'none' }} 
             />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -86,7 +86,7 @@ const Contact = () => {
               onChange={handleChange} 
               required 
               rows="5"
-              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'white', resize: 'none' }} 
+              style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', padding: '12px', borderRadius: '10px', color: 'var(--text-primary)', resize: 'none', outline: 'none' }} 
             ></textarea>
           </div>
 
@@ -95,7 +95,7 @@ const Contact = () => {
             disabled={status.loading}
             style={{ 
               background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', 
-              color: 'white', border: 'none', padding: '15px', borderRadius: '10px', 
+              color: 'var(--bg-primary)', border: 'none', padding: '15px', borderRadius: '10px', 
               fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', 
               justifyContent: 'center', gap: '10px', marginTop: '10px' 
             }}
