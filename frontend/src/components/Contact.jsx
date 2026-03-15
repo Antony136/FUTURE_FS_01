@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, MapPin, Mail } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +43,22 @@ const Contact = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '15px' }}>Get in <span className="gradient-text">Touch</span></h2>
-          <p style={{ color: 'var(--text-secondary)' }}>Have a project in mind? Let's talk about it.</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '30px' }}>Have a project in mind? Let's talk about it.</p>
+          
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)' }}>
+              <div style={{ padding: '10px', background: 'rgba(99, 102, 241, 0.1)', borderRadius: '12px', color: 'var(--accent-primary)' }}>
+                <MapPin size={20} />
+              </div>
+              <span style={{ fontSize: '1.1rem' }}>Chennai, Tamilnadu, India</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)' }}>
+              <div style={{ padding: '10px', background: 'rgba(99, 102, 241, 0.1)', borderRadius: '12px', color: 'var(--accent-primary)' }}>
+                <Mail size={20} />
+              </div>
+              <a href="mailto:antonyabishek014@gmail.com" style={{ fontSize: '1.1rem', color: 'inherit', textDecoration: 'none' }}>antonyabishek014@gmail.com</a>
+            </div>
+          </div>
         </div>
 
         {status.success ? (
