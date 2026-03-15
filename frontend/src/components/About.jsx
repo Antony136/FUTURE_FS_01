@@ -3,6 +3,23 @@ import { motion } from 'framer-motion';
 import { Code2, Database, Layout, Smartphone } from 'lucide-react';
 
 const About = () => {
+  const [theme, setTheme] = React.useState(document.documentElement.getAttribute('data-theme') || 'dark');
+
+  React.useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          setTheme(document.documentElement.getAttribute('data-theme'));
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
+
+  const statsColor = theme === 'light' ? '0f172a' : 'ffffff';
+
   const skills = [
     { title: "Web Development", icon: <Layout size={24} />, items: ["HTML/CSS", "React.js", "Node.js", "Express.js", "MongoDB"] },
     { title: "Languages", icon: <Code2 size={24} />, items: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript"] },
@@ -12,9 +29,9 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="grid grid-2" style={{ alignItems: 'center', gap: '80px' }}>
+      <div className="grid grid-2" style={{ alignItems: 'center', gap: 'clamp(20px, 5vw, 80px)' }}>
         <div>
-          <h2 style={{ fontSize: '3rem', marginBottom: '30px' }}>About <span className="gradient-text">Me</span></h2>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '30px' }}>About <span className="gradient-text">Me</span></h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '20px', fontSize: '1.1rem' }}>
             I am a 3rd-year Computer Science Engineering student with hands-on experience in full-stack web development using MERN and TypeScript.
           </p>
@@ -22,8 +39,8 @@ const About = () => {
             I am passionate about building scalable applications, solving real-world problems through technology, and continuously learning modern tools in AIML and Web Development. I'm a strong team collaborator with a drive to deliver efficient, user-focused solutions.
           </p>
           
-          <div style={{ display: 'flex', gap: '20px', marginBottom: '40px', flexWrap: 'wrap' }}>
-            <a href="https://drive.google.com/file/d/1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0/view?usp=sharing" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--bg-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '40px', flexWrap: 'wrap' }}>
+            <a href="https://drive.google.com/file/d/1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0/view?usp=sharing" target="_blank" rel="noreferrer" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '10px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', border: 'none', fontWeight: 'bold', borderRadius: '10px' }}>
               View Resume
             </a>
             <a href="https://drive.google.com/uc?export=download&id=1zsSEDVrKCUDKzw4WsGTxZ8eE7By1liL0" className="glass-card" style={{ padding: '12px 24px', textDecoration: 'none', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '10px', background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', fontWeight: 'bold', borderRadius: '10px', transition: 'var(--transition)' }}>
@@ -31,8 +48,8 @@ const About = () => {
             </a>
           </div>
           
-          <div className="glass-card" style={{ padding: '30px' }}>
-            <h4 style={{ marginBottom: '15px' }}>Education</h4>
+          <div className="glass-card" style={{ padding: '25px' }}>
+            <h4 style={{ marginBottom: '15px', fontSize: '1.2rem' }}>Education</h4>
             <div style={{ marginBottom: '15px' }}>
               <p style={{ color: 'var(--text-primary)', fontWeight: '600' }}>B.E. Computer Science Engineering</p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Sri Venkateswara College of Engineering • 2023 - Present</p>
@@ -46,7 +63,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid grid-2">
+        <div className="grid grid-2" style={{ gap: '20px' }}>
           {skills.map((skill, index) => (
             <motion.div 
               key={index}
@@ -57,17 +74,18 @@ const About = () => {
               style={{ padding: '20px' }}
             >
               <div className="gradient-text" style={{ marginBottom: '15px' }}>{skill.icon}</div>
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>{skill.title}</h3>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>{skill.title}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                 {skill.items.map(item => (
-                  <span key={item} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>• {item}</span>
+                  <span key={item} style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>• {item}</span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-      <div className="grid grid-2" style={{ alignItems: 'start', gap: '80px', marginTop: '40px' }}>
+
+      <div className="grid grid-2" style={{ alignItems: 'start', gap: 'clamp(20px, 5vw, 80px)', marginTop: '40px' }}>
         <div>
           <div className="glass-card" style={{ padding: '30px', borderLeft: '4px solid var(--accent-primary)' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -77,18 +95,42 @@ const About = () => {
               </span>
               Currently Building
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
-                Emotion-aware AI chatbot with NLP
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
+                  AI Traffic Anomaly Detection System
+                </div>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
+                  Computer vision system to analyze traffic footage and automatically detect accidents and congestion.
+                </p>
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
-                Advanced portfolio analytics dashboard
+              <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-secondary)' }}></div>
+                  Professional Portfolio Website
+                </div>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
+                  A responsive full-stack platform showcasing projects and technical skills with integrated blog.
+                </p>
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-secondary)' }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
-                Computer vision based traffic anomaly detection
+              <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }}></div>
+                  Client Lead Management (Mini CRM)
+                </div>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
+                  Lightweight CRM for tracking leads, managing follow-ups, and organizing client interactions.
+                </p>
+              </li>
+              <li style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600', fontSize: '1rem' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-secondary)' }}></div>
+                  Local Business Web Development
+                </div>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', paddingLeft: '18px', lineHeight: '1.4' }}>
+                  Modern, SEO-friendly web presence for local businesses to enhance customer engagement.
+                </p>
               </li>
             </ul>
           </div>
@@ -98,12 +140,12 @@ const About = () => {
           <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>GitHub Stats</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <img 
-              src="https://github-readme-stats.vercel.app/api?username=Antony136&show_icons=true&theme=transparent&hide_border=true&title_color=6366f1&icon_color=6366f1&text_color=ffffff&bg_color=00000000" 
+              src={`https://github-readme-stats.vercel.app/api?username=Antony136&show_icons=true&theme=transparent&hide_border=true&title_color=6366f1&icon_color=6366f1&text_color=${statsColor}&bg_color=00000000`}
               alt="Antony's GitHub stats" 
               style={{ width: '100%', maxWidth: '450px', borderRadius: '10px' }}
             />
             <img 
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=Antony136&layout=compact&theme=transparent&hide_border=true&title_color=6366f1&text_color=ffffff&bg_color=00000000" 
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Antony136&layout=compact&theme=transparent&hide_border=true&title_color=6366f1&text_color=${statsColor}&bg_color=00000000`} 
               alt="Top Languages" 
               style={{ width: '100%', maxWidth: '400px', borderRadius: '10px' }}
             />
