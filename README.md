@@ -1,4 +1,4 @@
-# 🚀 FUTURE_FS_01 | Premium Full-Stack Portfolio
+# Premium Full-Stack Portfolio
 
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -13,9 +13,9 @@ A state-of-the-art, visually stunning, and ultra-responsive full-stack portfolio
 ## 📽️ Project Showcase
 
 > [!IMPORTANT]
-> A high-quality demo video of this project is available in the root directory.
+> A high-quality demo GIF of this project is available in the root directory.
 
-![Project Demo Placeholder](demo.mp4)
+![Project Demo Placeholder](demo.gif)
 
 ---
 
@@ -75,7 +75,7 @@ FUTURE_FS_01/
 │   ├── routes/             # API Endpoints (Blogs, Contact)
 │   ├── server.js           # Server entry point
 │   └── package.json        
-├── demo.mp4                # Project demo video
+├── demo.gif                # Project demo GIF
 └── README.md               # You are here!
 ```
 
